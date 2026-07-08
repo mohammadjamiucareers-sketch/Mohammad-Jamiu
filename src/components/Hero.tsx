@@ -110,34 +110,138 @@ export const Hero = ({ onBookClick, onExploreClick }: HeroProps) => {
             </motion.div>
           </div>
 
-          {/* Right Column: Hero Illustration Image */}
+          {/* Right Column: Interactive Animated Career Callback Success Dashboard */}
           <div className="lg:col-span-5 relative w-full flex justify-center">
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="relative w-full max-w-md lg:max-w-none aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border border-white/10"
-              id="hero-image-container"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative w-full max-w-md lg:max-w-none aspect-[4/3] rounded-3xl p-6 bg-slate-950 border border-white/10 shadow-2xl overflow-hidden flex flex-col justify-between group"
+              id="hero-dashboard-container"
             >
-              <img
-                src="/src/assets/images/career_coaching_hero_1782963901340.jpg"
-                alt="Executive Career Coaching Session with Mohammad Jamiu"
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent" />
+              {/* Luxury background flares */}
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-accent/15 rounded-full blur-2xl group-hover:scale-125 transition-all duration-1000" />
+              <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-blue-500/10 rounded-full blur-2xl" />
 
-              {/* Float badge */}
-              <div className="absolute bottom-4 left-4 right-4 bg-primary/90 backdrop-blur-md p-4 rounded-xl border border-white/10 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent">
-                  <CheckCircle2 size={20} />
+              {/* Dashboard Header */}
+              <div className="flex justify-between items-center z-10">
+                <div className="flex items-center gap-2">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-ping" />
+                  <span className="text-[10px] font-black tracking-widest text-slate-400 uppercase">
+                    ATS COMPLIANCE DIAGNOSTIC
+                  </span>
                 </div>
-                <div>
-                  <div className="text-xs font-semibold text-accent uppercase tracking-wider">
-                    Track Record
+                <span className="px-2.5 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/25 text-[9px] font-bold text-emerald-400">
+                  98% COGNITIVE PASS
+                </span>
+              </div>
+
+              {/* Main Animated Visualization */}
+              <div className="relative my-6 flex-1 flex flex-col justify-center items-center z-10">
+                
+                {/* SVG Line Graph showing extreme callback slope */}
+                <svg className="w-full h-32 text-accent" viewBox="0 0 300 120" fill="none">
+                  <defs>
+                    <linearGradient id="chart-grad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="var(--color-accent, #D4AF37)" stopOpacity="0.25" />
+                      <stop offset="100%" stopColor="var(--color-accent, #D4AF37)" stopOpacity="0" />
+                    </linearGradient>
+                  </defs>
+                  
+                  {/* Grid lines */}
+                  <line x1="0" y1="20" x2="300" y2="20" stroke="rgba(255,255,255,0.03)" strokeDasharray="4 4" />
+                  <line x1="0" y1="60" x2="300" y2="60" stroke="rgba(255,255,255,0.03)" strokeDasharray="4 4" />
+                  <line x1="0" y1="100" x2="300" y2="100" stroke="rgba(255,255,255,0.03)" strokeDasharray="4 4" />
+
+                  {/* Shaded Area */}
+                  <motion.path
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    transition={{ duration: 2, ease: "easeOut" }}
+                    d="M10 110 Q 50 100, 100 80 T 180 50 T 260 15 L 260 110 Z"
+                    fill="url(#chart-grad)"
+                  />
+
+                  {/* Main Line */}
+                  <motion.path
+                    initial={{ pathLength: 0 }}
+                    animate={{ pathLength: 1 }}
+                    transition={{ duration: 1.8, ease: "easeOut" }}
+                    d="M10 110 Q 50 100, 100 80 T 180 50 T 260 15"
+                    stroke="#D4AF37"
+                    strokeWidth="3.5"
+                    strokeLinecap="round"
+                  />
+
+                  {/* Pulse points */}
+                  <motion.circle
+                    cx="100" cy="80" r="4"
+                    fill="#D4AF37"
+                    animate={{ scale: [1, 1.5, 1] }}
+                    transition={{ repeat: Infinity, duration: 2 }}
+                  />
+                  <motion.circle
+                    cx="180" cy="50" r="4"
+                    fill="#4fd1c5"
+                    animate={{ scale: [1, 1.5, 1] }}
+                    transition={{ repeat: Infinity, duration: 2, delay: 0.5 }}
+                  />
+                  <motion.circle
+                    cx="260" cy="15" r="6"
+                    fill="#10b981"
+                    className="shadow-xl"
+                  />
+                </svg>
+
+                {/* Overlapping Info Badges inside Visualization */}
+                <div className="absolute top-0 left-2 flex gap-1.5">
+                  <motion.span
+                    animate={{ y: [0, -3, 0] }}
+                    transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+                    className="px-2 py-1 rounded-lg bg-slate-900 border border-slate-800 text-[10px] font-extrabold text-white flex items-center gap-1 shadow-md"
+                  >
+                    <span className="text-accent">★</span> +42% Comp Growth
+                  </motion.span>
+                </div>
+
+                <div className="absolute bottom-1 right-2">
+                  <motion.span
+                    animate={{ y: [0, 3, 0] }}
+                    transition={{ repeat: Infinity, duration: 3.5, ease: "easeInOut", delay: 0.5 }}
+                    className="px-2 py-1 rounded-lg bg-slate-900 border border-slate-800 text-[10px] font-extrabold text-accent flex items-center gap-1 shadow-md"
+                  >
+                    🚀 C-Suite Recruited
+                  </motion.span>
+                </div>
+              </div>
+
+              {/* Lower Section Metrics */}
+              <div className="grid grid-cols-3 gap-3 border-t border-white/5 pt-4 z-10">
+                <div className="text-left">
+                  <div className="text-[10px] font-black text-slate-500 uppercase">CV Match</div>
+                  <div className="text-base font-black text-white">99% ATS</div>
+                </div>
+                <div className="text-left border-l border-white/5 pl-3">
+                  <div className="text-[10px] font-black text-slate-500 uppercase">Global Pool</div>
+                  <div className="text-base font-black text-accent">Top 1%</div>
+                </div>
+                <div className="text-left border-l border-white/5 pl-3">
+                  <div className="text-[10px] font-black text-slate-500 uppercase">Callbacks</div>
+                  <div className="text-base font-black text-emerald-400">14 Days</div>
+                </div>
+              </div>
+
+              {/* Interactive bottom tracker bar */}
+              <div className="mt-4 bg-white/5 border border-white/10 p-3 rounded-2xl flex items-center gap-3 z-10 hover:bg-white/10 transition-colors duration-300">
+                <div className="w-9 h-9 rounded-full bg-accent/20 flex items-center justify-center text-accent shrink-0">
+                  <CheckCircle2 size={16} />
+                </div>
+                <div className="text-left">
+                  <div className="text-[10px] font-semibold text-accent uppercase tracking-wider">
+                    TRACK RECORD VERIFIED
                   </div>
-                  <div className="text-sm font-bold text-white">
-                    94% of Clients Land Interviews in 60 Days
+                  <div className="text-xs font-bold text-white leading-normal">
+                    94% of Clients Land Roles in 60 Days
                   </div>
                 </div>
               </div>

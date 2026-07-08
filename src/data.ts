@@ -392,7 +392,7 @@ export const pricingPackagesData: PricingPackage[] = [
   {
     id: "basic",
     name: "Basic",
-    price: 100,
+    price: 150,
     description: "Ideal for early-career professionals or those looking to quickly optimize a single document.",
     features: [
       "ATS-Optimized Professional Resume / CV",
@@ -406,7 +406,7 @@ export const pricingPackagesData: PricingPackage[] = [
   {
     id: "professional",
     name: "Professional",
-    price: 250,
+    price: 450,
     description: "Our most popular full-stack career transition package, engineered to double your interviews.",
     isPopular: true,
     features: [
@@ -421,9 +421,9 @@ export const pricingPackagesData: PricingPackage[] = [
   },
   {
     id: "premium",
-    name: "Premium",
-    price: 490,
-    description: "The ultimate white-glove executive package for senior leaders, C-suite executives, and directors.",
+    name: "Premium (C-Suite & Board)",
+    price: 1250,
+    description: "The ultimate white-glove executive package for senior leaders, C-suite executives, and directors seeking high-tier placements.",
     features: [
       "Everything in Professional",
       "C-Suite/Boardroom CV Overhaul & Executive Biography",
@@ -438,6 +438,51 @@ export const pricingPackagesData: PricingPackage[] = [
 ];
 
 export const careerResourcesData: CareerResource[] = [
+  {
+    id: "boardroom-cv",
+    title: "The C-Suite Boardroom CV: Positioning for Governance & Global Scale",
+    category: "Executive Advisory",
+    readTime: "8 min read",
+    date: "June 30, 2026",
+    summary: "How C-Suite and Board candidates should re-engineer their resumes to focus on enterprise governance, capital deployment, and organizational scale.",
+    image: "/src/assets/images/c_suite_success_1783020737519.jpg",
+    content: [
+      "Board-level and C-Suite resumes require a complete paradigm shift. Recruiters at this level do not care about your functional tasks or day-to-day operations. They care about enterprise risk, capital deployment, P&L stewardship, and organizational governance.",
+      "Shift the focus to scale. Instead of stating 'Managed the engineering team,' you must articulate 'Steered global engineering organization of 350+ personnel, managing a CAPEX budget of $40M and overseeing systemic digital transformation across three international offices.'",
+      "Ensure a clear Board-Ready profile summary. At the top of page one, define your primary operating mandate (e.g., 'Enterprise Turnarounds | High-Growth Scale-Ups | Global M&A Integration') and follow it with a 3-sentence executive statement emphasizing fiduciary responsibility.",
+      "Quantify your board interactions. If you have reported directly to board committees or served as an advisory member, dedicate a clear subsection to 'Board Relations & Advisory Governance' highlighting major policy adoptions or capital approval successes."
+    ]
+  },
+  {
+    id: "c-suite-linkedin",
+    title: "Executive LinkedIn SEO: Overhauling Headlines for Inbound Headhunters",
+    category: "Executive Advisory",
+    readTime: "6 min read",
+    date: "June 25, 2026",
+    summary: "A deep dive into advanced keyword routing to capture executive search agency queries and secure private equity boardroom visibility.",
+    image: "/src/assets/images/executive_career_tips_1783020722888.jpg",
+    content: [
+      "Executive search consultants and Private Equity partners do not browse LinkedIn like normal recruiters. They use highly specific, premium Boolean search filters to identify candidates who have presided over particular organizational thresholds.",
+      "The Executive Headline Formula: Target Title | P&L Scale or Funding Stage | Key Strategic Driver. Example: 'Chief Financial Officer (CFO) | Overlooked $120M P&L | Pre-IPO Scaling & Debt Restructuring'. This ensures immediate keyword matches when headhunters filter by business size.",
+      "Your 'About' section must serve as an authoritative executive bio. It should outline your professional operating philosophy, your major commercial achievements, and a high-level summary of your career's cumulative fiscal impact.",
+      "Unlocking private equity network settings. Make sure your profile has 'Open to Work' enabled strictly for recruiters, and that your target industries are accurately aligned with global equity hubs (e.g., London, Dubai, New York, Singapore)."
+    ]
+  },
+  {
+    id: "executive-negotiation",
+    title: "Negotiating C-Suite Total Comp: Equity, LTIs, and Board Allowances",
+    category: "Executive Advisory",
+    readTime: "9 min read",
+    date: "June 20, 2026",
+    summary: "Learn the high-stakes negotiation mechanics behind complex corporate compensation packages, including performance-vested stock units.",
+    image: "/src/assets/images/executive_career_tips_1783020722888.jpg",
+    content: [
+      "At the executive and C-Suite levels, base salary represents only a small fraction of your total compensation potential. Your negotiation strategy must focus heavily on Performance Stock Units (PSUs), Long-Term Incentives (LTIs), and strategic exit provisions.",
+      "Establish your walk-away valuation threshold. Before entering discussions, evaluate your target firm's capital structure and run multiple valuation scenarios representing low, mid, and high stock-performance growth curves.",
+      "Structure multi-variable performance vesting. If the base salary is capped due to internal corporate bands, negotiate an accelerated vesting schedule for RSUs or introduce strategic milestones that trigger significant capital bonuses.",
+      "Secure key protective clauses. Never sign an executive agreement without reviewing the 'Golden Parachute' clauses, change-of-control provisions, and standard non-compete limits. These ensure complete long-term financial security regardless of corporate restructuring."
+    ]
+  },
   {
     id: "ats-secrets",
     title: "Cracking the ATS: What Recruiters Never Tell You",

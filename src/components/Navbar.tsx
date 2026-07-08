@@ -16,7 +16,7 @@ export const Navbar = ({ onBookClick }: NavbarProps) => {
       setScrolled(window.scrollY > 20);
 
       // Determine active section based on scroll position
-      const sections = ["home", "about", "services", "why-choose", "process", "portfolio", "pricing", "resources", "faq", "contact"];
+      const sections = ["home", "about", "services", "why-choose", "process", "resume-dropper", "portfolio", "live-placements", "pricing", "booking-system", "resources", "faq", "contact"];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -40,10 +40,11 @@ export const Navbar = ({ onBookClick }: NavbarProps) => {
     { name: "Home", id: "home" },
     { name: "About", id: "about" },
     { name: "Services", id: "services" },
-    { name: "Portfolio", id: "portfolio" },
+    { name: "CV Diagnostic", id: "resume-dropper" },
+    { name: "Placements", id: "live-placements" },
     { name: "Pricing", id: "pricing" },
+    { name: "Book Call", id: "booking-system" },
     { name: "Resources", id: "resources" },
-    { name: "FAQ", id: "faq" },
     { name: "Contact", id: "contact" }
   ];
 

@@ -52,11 +52,12 @@ export interface PricingPackage {
 export interface CareerResource {
   id: string;
   title: string;
-  category: "Resume" | "LinkedIn" | "Interview" | "Salary" | "Networking" | "Career Change" | "Branding" | "General";
+  category: string;
   readTime: string;
   date: string;
   summary: string;
   content: string[];
+  image?: string;
 }
 
 export interface FAQItem {

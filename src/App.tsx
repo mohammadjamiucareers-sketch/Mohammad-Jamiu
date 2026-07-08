@@ -8,7 +8,11 @@ import { Process } from "./components/Process";
 import { Metrics } from "./components/Metrics";
 import { Testimonials } from "./components/Testimonials";
 import { Portfolio } from "./components/Portfolio";
+import { LivePlacements } from "./components/LivePlacements";
+import { ResumeDropper } from "./components/ResumeDropper";
 import { Pricing } from "./components/Pricing";
+import { BookingSystem } from "./components/BookingSystem";
+import { FloatingActionWidget } from "./components/FloatingActionWidget";
 import { Resources } from "./components/Resources";
 import { FAQ } from "./components/FAQ";
 import { Contact } from "./components/Contact";
@@ -18,9 +22,9 @@ export default function App() {
   const [preFilledService, setPreFilledService] = useState<string | undefined>(undefined);
 
   const handleBookConsultation = () => {
-    const contactSection = document.getElementById("contact-form-container");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
+    const bookingSection = document.getElementById("booking-system");
+    if (bookingSection) {
+      bookingSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -71,11 +75,20 @@ export default function App() {
         {/* Strategic Connect Steps */}
         <Process />
 
+        {/* Interactive Resume Dropper & ATS Diagnostic */}
+        <ResumeDropper />
+
         {/* Deliverables Cases */}
         <Portfolio />
 
+        {/* Live Placements Board */}
+        <LivePlacements />
+
         {/* Dynamic Pricing Plans & Packages */}
         <Pricing />
+
+        {/* Interactive Booking & Secure Checkout Gateway */}
+        <BookingSystem />
 
         {/* Realistic Sample Reviews */}
         <Testimonials />
@@ -95,6 +108,9 @@ export default function App() {
 
       {/* Footer Banner */}
       <Footer />
+
+      {/* Floating WhatsApp and Career AI Assistant */}
+      <FloatingActionWidget />
     </div>
   );
 }

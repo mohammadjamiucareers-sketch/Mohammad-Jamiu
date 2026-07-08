@@ -144,9 +144,9 @@ export const Contact = ({ preFilledService, onClearPreFilledService }: ContactPr
     "Cover Letter Writing",
     "Networking Strategy",
     "Job Application Support",
-    "Basic Package ($100)",
-    "Professional Package ($250)",
-    "Premium Package ($490)"
+    "Basic Package ($150)",
+    "Professional Package ($450)",
+    "Premium Package (C-Suite & Board) ($1,250)"
   ];
 
   return (
@@ -236,12 +236,12 @@ export const Contact = ({ preFilledService, onClearPreFilledService }: ContactPr
                   <div className="flex-1 min-w-0">
                     <div className="text-xs font-bold text-blue-400 uppercase tracking-widest mb-1">LinkedIn Network</div>
                     <a
-                      href="https://www.linkedin.com/in/musa-jamiu-441024413"
+                      href="https://www.linkedin.com/in/musa-a-jamiu-a6908741b"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-base font-bold text-white hover:text-accent transition-colors block truncate"
                     >
-                      Musa Jamiu Profile
+                      Musa A. Jamiu Profile
                     </a>
                   </div>
                 </div>

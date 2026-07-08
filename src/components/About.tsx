@@ -21,31 +21,95 @@ export const About = () => {
             <div className="absolute -inset-4 bg-accent/10 rounded-2xl blur-xl -z-10" />
 
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative rounded-2xl overflow-hidden shadow-2xl border border-slate-100 aspect-[1/1] max-w-sm sm:max-w-md mx-auto lg:max-w-none"
-              id="about-image-wrapper"
+              className="relative rounded-3xl p-8 bg-slate-900 border border-slate-800 shadow-2xl overflow-hidden aspect-[1/1] max-w-sm sm:max-w-md mx-auto lg:max-w-none flex flex-col items-center justify-center text-center group"
+              id="about-logo-wrapper"
             >
-              <img
-                src="/src/assets/images/mohammad_jamiu_portrait_1782963914153.jpg"
-                alt="Mohammad Jamiu - Career Specialist"
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/10 to-transparent" />
+              {/* Background ambient lighting */}
+              <div className="absolute inset-0 bg-gradient-to-b from-accent/10 via-transparent to-primary/40 pointer-events-none" />
+              <div className="absolute -top-12 -left-12 w-32 h-32 bg-accent/20 rounded-full blur-2xl group-hover:scale-125 transition-transform duration-700" />
+              <div className="absolute -bottom-12 -right-12 w-32 h-32 bg-amber-500/10 rounded-full blur-2xl" />
 
-              {/* Float info */}
-              <div className="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-sm p-4 rounded-xl shadow-lg border border-slate-100">
-                <div className="flex items-center gap-2 mb-1">
-                  <Star size={16} className="text-accent fill-accent" />
-                  <span className="text-xs font-bold text-primary tracking-wider uppercase">
-                    Award-Winning Strategist
+              {/* Glowing animated circles representing career stages */}
+              <div className="relative w-48 h-48 sm:w-56 sm:h-56 flex items-center justify-center">
+                
+                {/* Outer spin circle */}
+                <motion.div 
+                  animate={{ rotate: 360 }}
+                  transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+                  className="absolute inset-0 border-2 border-dashed border-slate-800 rounded-full"
+                />
+
+                {/* Accent orbital dots */}
+                <motion.div 
+                  animate={{ rotate: -360 }}
+                  transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+                  className="absolute inset-4 border border-accent/20 rounded-full flex justify-between items-center px-2"
+                >
+                  <div className="w-2.5 h-2.5 bg-accent rounded-full shadow-lg shadow-accent" />
+                  <div className="w-2 h-2 bg-slate-700 rounded-full" />
+                </motion.div>
+
+                {/* Core Crest/Logo SVG */}
+                <motion.div
+                  animate={{ scale: [1, 1.03, 1] }}
+                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+                  className="relative z-10 w-32 h-32 bg-slate-950 border-2 border-accent/40 rounded-3xl shadow-xl flex flex-col items-center justify-center p-4 group-hover:border-accent transition-colors duration-500"
+                >
+                  <svg viewBox="0 0 100 100" className="w-20 h-20 text-accent">
+                    {/* Golden rising arrow stairs representing peak trajectory */}
+                    <path 
+                      d="M20 75 L35 75 L35 60 L50 60 L50 45 L65 45 L65 25 L80 25" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      strokeWidth="4" 
+                      strokeLinecap="round" 
+                      strokeLinejoin="round"
+                    />
+                    {/* Glowing dynamic pointer arrow */}
+                    <polygon 
+                      points="72,25 80,25 80,33" 
+                      fill="currentColor"
+                    />
+                    {/* Document outline representing CV optimization */}
+                    <path 
+                      d="M25 35 H45 M25 45 H55 M25 55 H45" 
+                      stroke="rgba(212,175,55,0.4)" 
+                      strokeWidth="3" 
+                      strokeLinecap="round"
+                    />
+                    {/* Central key node */}
+                    <circle cx="65" cy="45" r="4" fill="#fff" />
+                  </svg>
+                  <span className="text-[9px] font-black tracking-[0.25em] text-accent uppercase mt-2">
+                    MUSA JAMIU
+                  </span>
+                </motion.div>
+              </div>
+
+              {/* Career coach branding texts */}
+              <div className="mt-6 z-10">
+                <h3 className="text-xl font-extrabold text-white tracking-tight">
+                  Executive Alignment Seal
+                </h3>
+                <p className="text-xs text-slate-400 mt-1.5 font-medium tracking-wide">
+                  ATS Verified • C-Suite Credentialing • Global Trajectory
+                </p>
+              </div>
+
+              {/* Bottom tag info */}
+              <div className="absolute bottom-4 left-4 right-4 bg-slate-950/90 border border-slate-800 p-3 rounded-2xl shadow-lg">
+                <div className="flex items-center justify-center gap-1.5 mb-0.5">
+                  <Star size={12} className="text-accent fill-accent" />
+                  <span className="text-[10px] font-black text-accent tracking-wider uppercase">
+                    Musa A. Jamiu Brand Identity
                   </span>
                 </div>
-                <p className="text-xs text-slate-600 leading-normal">
-                  Expert career counseling trusted by executives across Dubai, London, New York & global hubs.
+                <p className="text-[10px] text-slate-400">
+                  Securing 94% interview shortlists across EMEA, Americas, and GCC countries.
                 </p>
               </div>
             </motion.div>

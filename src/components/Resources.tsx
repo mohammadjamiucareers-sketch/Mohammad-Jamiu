@@ -8,7 +8,7 @@ export const Resources = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>("All");
   const [activeArticle, setActiveArticle] = useState<CareerResource | null>(null);
 
-  const categories = ["All", "Resume", "LinkedIn", "Interview", "Salary", "Networking", "Career Change", "Branding"];
+  const categories = ["All", "Executive Advisory", "Resume", "LinkedIn", "Interview", "Salary", "Networking", "Career Change", "Branding"];
 
   const filteredResources = selectedCategory === "All"
     ? careerResourcesData
@@ -61,29 +61,46 @@ export const Resources = () => {
                 exit={{ opacity: 0, scale: 0.95 }}
                 transition={{ duration: 0.5, delay: index * 0.05 }}
                 onClick={() => setActiveArticle(article)}
-                className="bg-white rounded-2xl p-6 border border-slate-100 hover:border-accent/30 hover:shadow-xl cursor-pointer transition-all duration-300 flex flex-col justify-between group"
+                className="bg-white rounded-2xl overflow-hidden border border-slate-100 hover:border-accent/30 hover:shadow-xl cursor-pointer transition-all duration-300 flex flex-col justify-between group"
                 id={`resource-card-${article.id}`}
               >
                 <div>
-                  {/* Category & Read Time metadata */}
-                  <div className="flex justify-between items-center text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-4">
-                    <span className="text-accent">{article.category}</span>
-                    <span className="flex items-center gap-1">
-                      <Clock size={10} />
-                      {article.readTime}
-                    </span>
+                  {/* Article Thumbnail Image */}
+                  {article.image ? (
+                    <div className="w-full h-40 overflow-hidden relative border-b border-slate-100">
+                      <img 
+                        src={article.image} 
+                        alt={article.title} 
+                        className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-500"
+                        referrerPolicy="no-referrer"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-900/10 via-transparent to-transparent pointer-events-none" />
+                    </div>
+                  ) : (
+                    <div className="w-full h-3 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10" />
+                  )}
+
+                  <div className="p-6 pb-0">
+                    {/* Category & Read Time metadata */}
+                    <div className="flex justify-between items-center text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-3">
+                      <span className="text-accent">{article.category}</span>
+                      <span className="flex items-center gap-1">
+                        <Clock size={10} />
+                        {article.readTime}
+                      </span>
+                    </div>
+
+                    <h3 className="text-sm sm:text-base font-bold text-primary mb-2 group-hover:text-accent transition-colors duration-250 leading-snug line-clamp-2">
+                      {article.title}
+                    </h3>
+
+                    <p className="text-xs text-slate-500 leading-relaxed mb-4 line-clamp-2">
+                      {article.summary}
+                    </p>
                   </div>
-
-                  <h3 className="text-base font-bold text-primary mb-3 group-hover:text-accent transition-colors duration-250 leading-snug">
-                    {article.title}
-                  </h3>
-
-                  <p className="text-xs text-slate-500 leading-relaxed mb-6 line-clamp-3">
-                    {article.summary}
-                  </p>
                 </div>
 
-                <div className="flex items-center justify-between pt-4 border-t border-slate-50">
+                <div className="p-6 pt-3 border-t border-slate-50 flex items-center justify-between">
                   <span className="text-[10px] text-slate-400 font-medium flex items-center gap-1">
                     <Calendar size={10} />
                     {article.date}
@@ -159,6 +176,18 @@ export const Resources = () => {
 
               {/* Readable content block */}
               <div className="p-8 sm:p-10 max-h-[60vh] overflow-y-auto text-left space-y-6 text-slate-600 leading-relaxed text-sm sm:text-base">
+                {activeArticle.image && (
+                  <div className="w-full h-48 sm:h-64 rounded-xl overflow-hidden relative mb-6 border border-slate-100 shadow-sm">
+                    <img 
+                      src={activeArticle.image} 
+                      alt={activeArticle.title} 
+                      className="w-full h-full object-cover"
+                      referrerPolicy="no-referrer"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-950/10 via-transparent to-transparent pointer-events-none" />
+                  </div>
+                )}
+                
                 <p className="font-semibold text-primary italic text-base">
                   {activeArticle.summary}
                 </p>

@@ -45,7 +45,7 @@ export const Footer = () => {
             {/* Social Grid icons */}
             <div className="flex gap-4" id="footer-social-links">
               <a
-                href="https://www.linkedin.com/in/musa-jamiu-441024413"
+                href="https://www.linkedin.com/in/musa-a-jamiu-a6908741b"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-xl bg-white/5 hover:bg-accent/10 border border-white/10 hover:border-accent text-slate-300 hover:text-accent flex items-center justify-center transition-all cursor-pointer"
